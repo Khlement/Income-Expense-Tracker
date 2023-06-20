@@ -13,13 +13,6 @@ from streamlit_option_menu import option_menu
 import plotly.graph_objects as go
 import pymongo
 
-import os
-from dotenv import load_dotenv
-
-load_dotenv(".env")
-
-mongodb_password = os.getenv("MONGODB_PASSWORD")
-
 # -------------- SETTINGS --------------
 incomes = ["Salary", "Blog", "Other Income"]
 expenses = ["Rent", "Utilities", "Groceries", "Car", "Other Expenses", "Saving"]
@@ -30,7 +23,7 @@ layout = "centered"
 # --------------------------------------
 
 # MongoDB Atlas connection setup
-connection_string = f"mongodb+srv://khlement:{mongodb_password}@cluster1.rioqscn.mongodb.net/?retryWrites=true&w=majority"
+connection_string = f"mongodb+srv://khlement:Ca19980321@cluster1.rioqscn.mongodb.net/?retryWrites=true&w=majority"
 client = pymongo.MongoClient(connection_string)
 db = client["IncomeExpenseData"]
 collection = db["IncomeData"]
